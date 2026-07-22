@@ -30,8 +30,7 @@ that need raw or lightly processed event streams — not for live trading.
 
 - Hugging Face dataset: https://huggingface.co/datasets/oraclemangle/polymarket-canary-tape
 
-Until those URLs are published, treat this file as the canonical pointer from
-the code repo. Do not assume any data files ship inside this Git tree.
+No data files ship inside this Git tree; the dataset lives on Hugging Face.
 
 ## Relationship to the code export
 

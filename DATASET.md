@@ -26,7 +26,7 @@ events, and market universe snapshots aligned to the window above. Captured by
 Intended for replication studies, microstructure work, and strategy post-mortems
 that need raw or lightly processed event streams — not for live trading.
 
-## Links (TBD)
+## Links
 
 - Hugging Face dataset: https://huggingface.co/datasets/oraclemangle/polymarket-canary-tape
 

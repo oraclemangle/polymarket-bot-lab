@@ -1,0 +1,17 @@
+polymarket-bot-lab
+Copyright 2026 the longshot-research authors
+
+This product includes software developed by third parties:
+
+- py-clob-client, py-clob-client-v2, py-order-utils — MIT License,
+  Polymarket (https://github.com/Polymarket/py-clob-client,
+  https://github.com/Polymarket/python-order-utils). Used as PyPI
+  dependencies; versions pinned in uv.lock.
+- python-telegram-bot — LGPL-3.0-only
+  (https://github.com/python-telegram-bot/python-telegram-bot). Used as an
+  unmodified runtime dependency; version pinned in uv.lock.
+- research/order-example.py adapts usage patterns from the MIT-licensed
+  py-clob-client examples (Polymarket).
+
+All other dependencies are permissively licensed (MIT/BSD/Apache-2.0/PSF/
+MPL-2.0); the authoritative version list is uv.lock.

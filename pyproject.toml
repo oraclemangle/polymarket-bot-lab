@@ -1,0 +1,70 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "polymarket-bot"
+version = "0.1.0"
+description = "Polymarket bot lab: candidate strategies + research framework with real backtest/P&L context"
+requires-python = ">=3.11,<3.13"
+readme = "README.md"
+dependencies = [
+    "py-clob-client>=0.20.0",
+    # Polymarket V2 SDK (cutover 2026-04-28 11:00 UTC). Held alongside the
+    # V1 client until the cutover lands and bot executors are flipped to
+    # ClobWrapperV2. Post-cutover the V1 client is dead weight and can be
+    # removed in a follow-up commit.
+    "py-clob-client-v2>=1.0.0",
+    "httpx>=0.27.0",
+    "websockets>=12.0",
+    "tenacity>=8.2.3",
+    "pydantic>=2.6.0",
+    "pydantic-settings>=2.2.0",
+    "python-dotenv>=1.0.0",
+    "sqlalchemy>=2.0.25",
+    "alembic>=1.13.1",
+    "eth-account>=0.11.0",
+    "web3>=6.15.0",
+    "python-telegram-bot>=21.0",
+    "rich>=13.7.0",
+    "structlog>=24.1.0",
+]
+
+[project.optional-dependencies]
+analytics = [
+    "quantstats>=0.0.81,<0.1.0",
+]
+dev = [
+    "pytest>=8.0.0",
+    "pytest-asyncio>=0.23.0",
+    "pytest-cov>=4.1.0",
+    "ruff>=0.3.0",
+    "mypy>=1.9.0",
+    "freezegun>=1.4.0",
+]
+
+[tool.setuptools.packages.find]
+include = ["core*", "bots*", "scripts*"]
+exclude = ["tests*", "docs*", "research*", "specs*"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "N", "W", "B", "UP", "SIM", "RUF"]
+ignore = ["E501"]  # handled by formatter
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+asyncio_mode = "auto"
+filterwarnings = [
+    "ignore::DeprecationWarning:eth_utils.*",
+    "ignore::DeprecationWarning:websockets.*",
+]
+
+[tool.mypy]
+python_version = "3.11"
+strict = false
+ignore_missing_imports = true

@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+message: "If you use this software or cite the strategy record, please cite it as below."
+title: "polymarket-bot-lab"
+type: software
+authors:
+  - name: "the longshot-research authors"
+license: Apache-2.0
+date-released: "2026-07-22"
+year: 2026
+url: https://github.com/oraclemangle/polymarket-bot-lab
+repository-code: "https://github.com/oraclemangle/polymarket-bot-lab"
+abstract: >-
+  Open-source lab of candidate Polymarket trading bots and a research
+  framework (CLOB clients, fees, backtest tooling, tests, dashboard),
+  with honest paper/live-probe results and refinement notes. Two strategies
+  showed positive expectancy in testing (sports mid-band NO-fade; weather
+  range-fade) — promising, unproven; others are documented starting points
+  that need refinement before claiming an edge. Research only; not
+  financial advice.

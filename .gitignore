@@ -1,0 +1,86 @@
+# Secrets & keys — NEVER commit
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+*.age
+keystore/
+secrets/
+credentials/
+
+# Wallet data
+wallet.json
+wallet.dat
+mnemonic.txt
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+env/
+.python-version
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Node / TS (in case we touch TS CLOB client)
+node_modules/
+*.tsbuildinfo
+.next/
+dist/
+build/
+
+# DBs & data (can contain trading history / PII)
+*.db
+*.db-shm
+*.db-wal
+*.sqlite
+*.sqlite3
+data/
+!data/.gitkeep
+
+# Logs
+*.log
+logs/
+journal.txt
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Claude / AI tooling caches
+.claude/cache/
+.cursorrules-*.bak
+
+# Temp & build outputs
+tmp/
+.tmp/
+*.tmp
+coverage/
+htmlcov/
+.coverage
+
+# Backups
+*.bak
+*.orig
+
+# Personal profile / brainstorm artefacts (removed for privacy 2026-04-15)
+PROFILE_AND_LANDSCAPE.md
+.claude/
+data/backtest.db
+data/bot_f.db
+
+# GCP service account credentials (disabled files with keys - safety cleanup Phase 0)
+docs/project-8ac59f14-ef70-4f26-ad6-4d91f8cf39be.json.disabled-20260521T133104Z
+docs/project-*.json.disabled*
+*.json.disabled*service*account*

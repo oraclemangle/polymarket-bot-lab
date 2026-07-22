@@ -1,0 +1,76 @@
+<!doctype html>
+<!--
+  ============================================================================
+  POLYMARKET COCKPIT — DO NOT REVERT TO THE OLD MULTI-TAB DASHBOARD
+  ============================================================================
+  This file is the Bloomberg-style operator cockpit, baselined in commit
+  4f066bd ("Roll up strategy audits and paper trader promotions", 2026-05-10).
+
+  Active tabs (6): Overview | Longshot G | Weather D | Wallets | Orders | Events.
+  Bot-level rows for I/J/K/L/E/H all surface on the Overview's Active Bots,
+  Active Recorders, and Open Positions tables — NOT as dedicated tabs.
+
+  HISTORICAL REGRESSIONS (do not repeat):
+    - 2026-05-14: commit 89f93aa (claude/bot-i-live-promotion branch) was
+      authored against the pre-cockpit layout, reintroduced "Persistence Live
+      (I)", "Crypto Fair Value", "Orders & Positions", "Events & Health" tabs,
+      and dragged this file back to the old `topbar` / 7-tab style. The
+      cockpit was restored manually. Don't do this again.
+
+  IF YOU ARE ADDING A NEW BOT TO THE DASHBOARD:
+    1. Add it to core/bot_registry.py with dashboard_visible=True.
+    2. The cockpit will pick it up automatically via /api/overview's
+       bot_inventory list and render it in the Active Bots / Active Recorders
+       table. NO new tab is needed.
+    3. If special metrics are required, extend the row override in
+       dashboard/runtime_queries.py:_bot_inventory.
+
+  IF YOU MUST CHANGE THIS FILE:
+    - Keep the .rail header, .tabbar with the 6 buttons above, and
+      .tab-panels with matching data-panel ids.
+    - Do NOT reintroduce the old topbar header, the legacy h1 page title,
+      or the old eyebrow text — the pre-cockpit DOM markers are listed
+      in tests/dashboard/test_dashboard.py::test_dashboard_cockpit_revert_sentinels
+      and that test will fail CI if any of them regress.
+  ============================================================================
+-->
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Polymarket Cockpit</title>
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <div class="shell">
+      <header class="rail" id="status-rail">
+        <div class="rail-brand">POLYMARKET COCKPIT</div>
+        <div class="rail-cells" id="rail-cells"></div>
+        <div class="rail-meta">
+          <code id="wallet-display">--</code>
+          <span class="rail-time" id="timestamp">--</span>
+        </div>
+      </header>
+
+      <nav class="tabbar" aria-label="Dashboard tabs">
+        <button class="tab-button is-active" data-tab="overview">Overview</button>
+        <button class="tab-button" data-tab="bot-g">Longshot G</button>
+        <button class="tab-button" data-tab="bot-d">Weather D</button>
+        <button class="tab-button" data-tab="wallet-observer">Wallets</button>
+        <button class="tab-button" data-tab="orders">Orders</button>
+        <button class="tab-button" data-tab="events">Events</button>
+      </nav>
+
+      <main class="tab-panels">
+        <section class="tab-panel is-active" data-panel="overview" id="overview-panels"></section>
+        <section class="tab-panel" data-panel="bot-g" id="bot-g-panels"></section>
+        <section class="tab-panel" data-panel="bot-d" id="bot-d-panels"></section>
+        <section class="tab-panel" data-panel="wallet-observer" id="wallet-observer-panels"></section>
+        <section class="tab-panel" data-panel="orders" id="orders-panels"></section>
+        <section class="tab-panel" data-panel="events" id="events-panels"></section>
+      </main>
+    </div>
+
+  <script type="module" src="/app.js"></script>
+</body>
+</html>

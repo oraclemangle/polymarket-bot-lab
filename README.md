@@ -72,7 +72,7 @@ Infrastructure (not counted in the 11): Scribe's recorder package `bots/bot_e_re
 
 Market and tape data used in research are released separately:
 
-**→ see [DATASET.md](DATASET.md)** (polymarket-canary-tape; hosting links TBD on Zenodo / Hugging Face).
+**→ see [DATASET.md](DATASET.md)** (polymarket-canary-tape; hosting https://huggingface.co/datasets/oraclemangle/polymarket-canary-tape on Zenodo / Hugging Face).
 
 Code in this repository is Apache-2.0. The companion dataset is **CC-BY-4.0**.
 

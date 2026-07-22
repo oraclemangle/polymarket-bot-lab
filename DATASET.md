@@ -13,7 +13,7 @@ separately as **polymarket-canary-tape**.
 | Primary file | canary node, 2026-05-13 to 2026-07-05: 271.6M CEX trades, 27.9M PM WS events, 23,750 markets |
 | Second vantage | home-lab node, 2026-06-03 to 2026-07-01 (overlaps canary): 33.3M PM WS events, 4.3M CEX trades |
 | Early snapshot | 72h, 2026-04-30 to 2026-05-03: 532K PM WS events |
-| Hosting | Zenodo and Hugging Face (links TBD) |
+| Hosting | [Hugging Face](https://huggingface.co/datasets/oraclemangle/polymarket-canary-tape) |
 
 The canary/second-vantage overlap window supports cross-vantage latency and
 feed-consistency studies (same markets, two independent receive clocks).
@@ -28,8 +28,7 @@ that need raw or lightly processed event streams — not for live trading.
 
 ## Links (TBD)
 
-- Zenodo DOI / record: *to be added on publication*
-- Hugging Face dataset card: *to be added on publication*
+- Hugging Face dataset: https://huggingface.co/datasets/oraclemangle/polymarket-canary-tape
 
 Until those URLs are published, treat this file as the canonical pointer from
 the code repo. Do not assume any data files ship inside this Git tree.
